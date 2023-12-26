@@ -1,0 +1,14 @@
+@charset "UTF-8";
+body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    display: grid;
+    gap: 10px;
+}
+
+button {
+    grid-column: span 2;
+    cursor: pointer;
+}

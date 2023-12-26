@@ -1,0 +1,1 @@
+document.write('<html><head><title>hello hii</title></head><body><h1>hello hii how are	 you</h1></body></html>');

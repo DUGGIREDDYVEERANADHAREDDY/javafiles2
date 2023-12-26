@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<company>
+<Employees>
+<Employee category="technical">
+<Firstname>veera</Firstname>
+<Lastname>nadhareddy</Lastname>
+<mobile>96352062330</mobile>
+</Employee>
+<Employee category="non-technical">
+<Firstname>manasa</Firstname>
+<Lastname>reddy</Lastname>
+<mobile>6302232580</mobile>
+</Employee>
+</Employees>
+</company>

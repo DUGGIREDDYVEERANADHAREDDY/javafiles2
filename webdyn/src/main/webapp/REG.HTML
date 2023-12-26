@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+</head>
+<body>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: pink;
+        }
+
+    </style>
+    <h1>Student Registration Form</h1>
+    <form id="registrationForm">
+        <label for="username">Student Name</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="studentsection">Student Section</label>
+        <input type="text" id="studentsection" name="studentsection" required><br><br>
+
+        <input type="button" value="Submit" onclick="myFunction()">
+    </form>
+
+    <div id="xmlContent"></div>
+
+    <script>
+        let rollNumber = 1;
+
+        function myFunction() {
+        	var std=document.getElementById("username");
+        	var std1=document.getElementById("studentsection");
+        	
+            var xmlContentDiv = document.getElementById("xmlContent");
+            while (true) {
+                var continueAdd = confirm("Do you want to add more students?");
+                if (continueAdd) {
+                    var studentName = prompt("Enter student name:");
+                    var studentSection = prompt("Enter student section:");
+                    var text = "<student><studentname>" + studentName + "</studentname><rollnumber>" + rollNumber + "</rollnumber><section>" + studentSection + "</section></student>";
+                    alert(text);
+
+                    var parser = new DOMParser();
+                    var xmlDom = parser.parseFromString(text, "text/xml");
+
+                    xmlContentDiv.innerHTML += new XMLSerializer().serializeToString(xmlDom);
+                    xmlContentDiv.innerHTML += "<br><br>"; 
+
+                   std.innerHTML+=new XMLSerializer().serializeToString(xmlDom);
+                   std1.innerHTML+=new XMLSerializer().serializeToString(xmlDom);
+                    rollNumber++;
+                } else {
+                    break;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

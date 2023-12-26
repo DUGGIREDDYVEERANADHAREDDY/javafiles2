@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LOGin from</title>
+ <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image:url("https://i.guim.co.uk/img/static/sys-images/BOOKS/Pix/pictures/2011/11/3/1320324958115/Handwriting-007.jpg?width=465&dpr=1&s=none");
+      background-size:cover;
+    }
+    .container {
+      width: 50%;
+      margin: 100px auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="submit"] {
+
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+h2:first-letter{
+color:red;
+}
+a {
+    display: inline-block;
+    font-style: italic;
+    text-align: center;
+}
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Login Form</h2>
+  <form >
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+
+    <input type="submit" value="Register" onclick=myfunc()>
+    <a href="forget.html">Forget password</a><br><br>
+    <a href="sinup.html">signup</a>
+    </form>
+</div>
+<script>
+function myfun(){
+	 window.open("sinup.html");
+}
+</script>
+</body>
+</html>

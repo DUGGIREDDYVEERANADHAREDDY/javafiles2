@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Student Records</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Register</h1>
+        <form id="studentForm">
+            <label for="studentName">Student Name</label>
+            <input type="text" id="studentName" name="studentName" required><br>
+            <label for="class">Class</label>
+            <input type="text" id="class" name="class" required><br>
+            <label for="section">Section</label>
+            <input type="text" id="section" name="section" required><br>
+            <label id="rollNumber">Roll Number</label> 
+            <input type="submit" value="Submit" onclick="submitForm()">
+        </form>
+        <div id="displayData"></div>
+    </div>
+
+    <script>
+    let currentRollNumber = 0;
+
+    function incrementRollNumber() {
+        const rollNumberField = document.getElementById("rollNumber");
+        rollNumberField.textContent = currentRollNumber;
+        currentRollNumber++;
+    }
+
+    function submitForm() {
+        incrementRollNumber();
+        const rollNumber = currentRollNumber-1;
+
+        const studentName = document.getElementById("studentName").value;
+        const studentClass = document.getElementById("class").value;
+        const studentSection = document.getElementById("section").value;
+
+        const xmlDoc = document.createElement("Student");
+        xmlDoc.setAttribute("class", studentClass);
+        xmlDoc.setAttribute("section", studentSection);
+        xmlDoc.setAttribute("rollNumber", rollNumber);
+        const nameNode = document.createElement("Name");
+        nameNode.textContent = studentName;
+        xmlDoc.appendChild(nameNode);
+
+        const displayDiv = document.getElementById("displayData");
+        displayDiv.innerHTML = `<p>${studentName} - Class: ${studentClass}, Section: ${studentSection}, Roll No: ${rollNumber}</p>`;
+    }
+    </script>
+</body>
+</html>

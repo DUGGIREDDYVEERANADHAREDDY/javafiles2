@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Studentrecords</title>
+</head>
+<body>
+
+<div class="container">
+<h1>Studentregister</h1>
+<label for="studentname">studentname</label>
+<input type="text" id="studentname" name="stuentname" required><br>
+<label for="class">class</label>
+<input type="text" name="class"id ="class"required><br>
+<label for="section">section</label>
+<input type="text" name="section" id="section" required><br>
+<label for="rollnumber">rollnumber</label> 
+<input type="text" name="rollnumer" id="rollnumber"required> <br>
+<input type="submit" value="Submit " id="submit" onclick="xmlsave()">
+</div>
+<script type="text/javascript">
+function xmlsave(){
+	text=document.getElementById("submit");
+	alert(text);
+
+}
+var xmlDoc,paser,text;
+
+
+
+
+</script>
+
+</body>
+</html>

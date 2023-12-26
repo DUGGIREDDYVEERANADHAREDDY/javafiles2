@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<style>
+body
+{
+background-color:yellow;
+}
+div{
+display:inline-block;
+height:30px;
+position:relative;
+width:500px;
+text-align:center;
+top:200px;
+}
+input{
+position:absolute;
+height:100%;
+width:100%;
+}
+select{
+position:absolute;
+height:100px;
+width:100%;
+
+
+}
+</style>
+<div>
+    <input id='oneBox' type="text">
+    <br><br>
+    <select id='res' size="10"></select>
+</div>
+<script type="text/javascript">
+    const arrayofList = ["this is java example", "hello java", "image info systems","hello welcome to java"];
+    let matchingStrings = [];
+    const res = document.getElementById('res');
+    const oneBox = document.getElementById('oneBox');
+    oneBox.oninput = function () {
+        const searchString = oneBox.value;
+        matchingStrings.length = 0;
+        if (searchString.trim() === '') {
+            res.innerHTML = ''; 
+        } else {
+            arrayofList.forEach((list) => {
+                if (list.toLowerCase().indexOf(searchString) > -1) {
+                    matchingStrings.push(list);
+                }
+            });
+        let value = "";
+        matchingStrings.forEach((list) => {
+            value += "<option value='" + list + "'>" + list + "</option>";
+        });
+        res.innerHTML = value;
+        
+        
+  
+        /*t5.onclick=function(){
+       	 const h2tag = document.querySelector("h2");
+       h2tag.remove();*/
+        }
+        }
+</script>
+
+
+</body>
+</html>

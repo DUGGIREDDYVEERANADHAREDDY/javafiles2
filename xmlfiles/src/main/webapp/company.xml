@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type=text/xsl herf="company.xsl"?>
+<company>
+<Employees>
+<Employee category="technical">
+<EmpId>1</EmpId>
+<Firstname>veera</Firstname>
+<Lastname>nadhareddy</Lastname>
+<mobile>96352062330</mobile>
+</Employee>
+<Employee category="non-technical">
+<EmpId>2</EmpId>
+<Firstname>manasa</Firstname>
+<Lastname>reddy</Lastname>
+<mobile>6302232580</mobile>
+</Employee>
+</Employees>
+</company>

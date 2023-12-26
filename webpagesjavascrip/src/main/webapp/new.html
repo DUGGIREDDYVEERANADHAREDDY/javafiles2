@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>XMLHTTPREQUEST</h1>
+  <button type="button" onclick="load()">changedata</button><br><br>
+<div id="demo">
+  
+</div>
+<div class="loader">
+</div>
+<script>
+function load() {
+  var xhttp = new XMLHttpRequest(); 
+  xhttp.onreadystatechange = function() { 
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+  };
+  xhttp.open("GET", "http://localhost:8080/webpagesjavascrip/simple.jsp", true);
+  xhttp.send();
+}
+</script>
+<!--  <script>
+function load()
+{
+	//window.open("ajax_info.txt", true);
+	document.getElementById("demo").innerHTML = this.responseText;
+	window.open("reg.html", true);
+	window.send();
+}
+</script>-->
+</body>
+</html>

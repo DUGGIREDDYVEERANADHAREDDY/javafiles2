@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>TATA
+<button id="b1" onclick="tataload()">clickhere</button>
+<label id="l1"></label>
+</h1>
+<h1>BMW
+<button id="b2" onclick="bmwload()">clickhere</button>
+<label id="l2"></label>
+</h1>
+<h1>IMG
+<button id="b3" onclick="imgload()">clickhere</button>
+<label id="l3"></label>
+</h1>
+<script type="text/javascript">
+function tataload() {
+	  var xhttp = new XMLHttpRequest(); 
+	  xhttp.onreadystatechange = function() { 
+	    if (this.readyState == 4 && this.status == 200) {
+	      document.getElementById("l1").innerHTML = this.responseText;
+	      var responseXml = this.responseXml;
+	      if(responseXml)
+	    	  {
+	    	  console.log(responseXml);
+	    	  }
+	    }
+	  };
+	  xhttp.response="document";
+	  xhttp.open("GET", "http://localhost:8080/webpagesjavascrip/share.jsp?option=1", true);
+	  xhttp.send();
+	}
+function bmwload() {
+	  var xhttp = new XMLHttpRequest(); 
+	  xhttp.onreadystatechange = function() { 
+	    if (this.readyState == 4 && this.status == 200) {
+	      document.getElementById("l2").innerHTML = this.responseText;
+	      var responseXml = this.responseXml;
+	      if(responseXml){
+	    	  console.log(responseXml);
+	      }
+	    }
+	  };
+	  xhttp.response="document";
+	  xhttp.open("GET", "http://localhost:8080/webpagesjavascrip/share.jsp?option=2", true);
+	  xhttp.send();
+	}
+function imgload() {
+	  var xhttp = new XMLHttpRequest(); 
+	  xhttp.onreadystatechange = function() { 
+	    if (this.readyState == 4 && this.status == 200) {
+	      document.getElementById("l3").innerHTML = this.responseText;
+	      var responseXml=this.responseXml;
+	      if(responseXml){
+	    	  console.log(responseXml);
+	      }
+	    }
+	  };
+	  xhttp.open("GET", "http://localhost:8080/webpagesjavascrip/share.jsp?option=3", true);
+	  xhttp.send();
+	}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>company</title>
+</head>
+<body>
+<h1 id="a1"></h1>
+<h1 id="a2"></h1>
+<h1 id="a3"></h1>
+<h1 id="a4"></h1>
+<h1 id="a5"></h1>
+<h1 id="a6"></h1>
+<h1 id="a7"></h1>
+<h1 id="a8"></h1>
+<!--  <textarea id ="in"rows="10" cols="500"></textarea>
+<button onclick="myfunction()">submit</button>-->
+<textarea id ="out"rows="10" cols="10000"></textarea>
+<button onclick="mfunction()">submit</button>
+<button onclick="next()">nextbutton</button>
+<button onclick="pre()">pre</button>
+
+<script>
+	/*function myfunction(){
+		const t1=document.getElementById("in").value;
+		
+		//alert(t1);
+		parent =document.querySelector("body");
+		const h1tag=document.createElement("h1");
+		h1tag.innerHTML="<h1>"+t1+"</h1>";
+		parent.appendChild(h1tag);
+		
+	}*/
+	let k=0;
+	function mfunction()
+	{ let button=1;
+const t1=document.getElementById("out").value;
+		
+		//alert(t1);
+		parent =document.querySelector("body");
+		const h1tag=document.createElement("h1");
+		h1tag.innerHTML="<h1>"+t1+"</h1>";
+		parent.appendChild(h1tag);
+		
+	
+var text,parser,xmlDoc;
+text="<Employee type='perminet' location='kadapa' number='652062330'><Firstname>veera</Firstname><Lastname>nadhareddy</Lastname><mobile>96352062330</mobile></Employee>";
+parser=  new DOMParser();
+xmlDoc=parser.parseFromString(text,"text/xml");
+document.getElementById("a1").innerHTML =xmlDoc.getElementsByTagName("Employee")[0];
+const a =xmlDoc.getElementsByTagName("Employee")[0];
+document.getElementById("a2").innerHTML=a.childNodes[0];
+document.getElementById("a3").innerHTML=a.childNodes[0].nodeName;
+document.getElementById("a4").innerHTML=a.childNodes[0].parentNode.nodeName;
+document.getElementById("a7").innerHTML=a.childNodes[0].childNodes[0].parentNode.nodeName;
+let att =a.attributes;
+document.getElementById("a5").textContent=att.length;
+var output="";
+for(let i=0;i<att.length;i++){
+	output+=att[i].nodeName+":"+att[i].nodeValue;
+	output+="<br>";
+}
+let k = 0; // Declare k outside the function to retain its value
+
+function pre() {
+    if (k > 0) {
+        k--; // Decrement k
+        xmlDoc = parser.parseFromString(text, "text/xml");
+        document.getElementById("a1").innerHTML = xmlDoc.getElementsByTagName("Employee")[0];
+        const a = xmlDoc.getElementsByTagName("Employee")[0];
+        document.getElementById("a2").innerHTML = a.childNodes[0].textContent;
+        document.getElementById("a3").innerHTML = a.childNodes[0].nodeName;
+        document.getElementById("a4").innerHTML = a.childNodes[0].parentNode.nodeName;
+        document.getElementById("a7").innerHTML = a.childNodes[0].childNodes[0].parentNode.nodeName;
+        let att = a.attributes;
+        document.getElementById("a5").textContent = att.length;
+        var output = "";
+        for (let i = 0; i < att.length; i++) {
+            output += att[i].nodeName + ":" + att[i].nodeValue;
+            output += "<br>";
+        }
+    }
+}
+
+
+function next() {
+    if (k >0) {
+        k++; // Decrement k
+        xmlDoc = parser.parseFromString(text, "text/xml");
+        document.getElementById("a1").innerHTML = xmlDoc.getElementsByTagName("Employee")[0];
+        const a = xmlDoc.getElementsByTagName("Employee")[0];
+        document.getElementById("a2").innerHTML = a.childNodes[0].textContent;
+        document.getElementById("a3").innerHTML = a.childNodes[0].nodeName;
+        document.getElementById("a4").innerHTML = a.childNodes[0].parentNode.nodeName;
+        document.getElementById("a7").innerHTML = a.childNodes[0].childNodes[0].parentNode.nodeName;
+        let att = a.attributes;
+        document.getElementById("a5").textContent = att.length;
+        var output = "";
+        for (let i = 0; i < att.length; i++) {
+            output += att[i].nodeName + ":" + att[i].nodeValue;
+            output += "<br>";
+        }
+    }
+}
+	}
+
+	
+document.getElementById("a6").innerHTML=output;
+
+</script>
+
+</body>
+</html>
